@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "DynamoDB and Lambda Function Template"
+Resources:
+  LambdaFunction:
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: Retain
+    Properties:
+      Description: ""
+      Environment:
+        Variables:
+          dbname: !Ref DynamoDBTable
+      FunctionName: "counter-lambda"
+      Handler: "lambda_function.lambda_handler"
+      Architectures:
+        - "x86_64"
+      Code:
+        S3Bucket: "prod-04-2014-tasks"
+        S3Key: !Sub "/snapshots/${AWS::AccountId}/counter-lambda-f18f1492-b816-4a54-b627-cd3511c90fd5"
+        S3ObjectVersion: "KNzym1YxIZQqZyeUQDT2ZjEIFYlY_KjO"
+      MemorySize: 128
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/service-role/counter-lambda-role-irf0uzwt"
+      Runtime: "python3.9"
+      Timeout: 3
+      TracingConfig:
+        Mode: "PassThrough"
+      EphemeralStorage:
+        Size: 512
+
+  DynamoDBTable:
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: Retain
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "id"
+          AttributeType: "S"
+      TableName: "counter-db"
+      KeySchema:
+        - AttributeName: "id"
+          KeyType: "HASH"
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
