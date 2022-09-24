@@ -24,7 +24,7 @@ Hello From my first Lambda!
 11. Tests
 Tested every minute, I am the king of Unit Tests!
 12. Infrastructure as Code
-I created a YAML file for DynamoDB Table and Lambda Function then imported those 2 resources to CloudFormation. Now I can update the stack from Console.
+I created a YAML file for DynamoDB Table APIGateway and Lambda Function then deployed with diffrent name in same region. Test is successful.
 13. Source Control
 
 
