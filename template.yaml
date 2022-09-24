@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  cloud-resume-challenge
+
+  SAM Template for Lambda - APIGateway - DynamoDB
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+
+  CountFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: counter-db1
+      CodeUri: function/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - x86_64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /put
+            Method: get
+
+  DynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: counter-db1
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: "id"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "id"
+          KeyType: "HASH"
+
