@@ -25,7 +25,7 @@ jobs:
           sam build
       - name: SAM Deploy
         run: |
-          sam deploy --stack-name infra --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
+          sam deploy --stack-name infra --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --capabilities CAPABILITY_IAM
           
           
   upload-website-to-s3:
