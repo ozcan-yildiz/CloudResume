@@ -27,6 +27,7 @@ jobs:
         run: |
           sam deploy --stack-name infra --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset
           
+          
   upload-website-to-s3:
     runs-on: ubuntu-latest
     steps:
