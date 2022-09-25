@@ -22,7 +22,7 @@ def lambda_handler(event, context):
             'id': {'S': 'view-count'}
         },
         UpdateExpression = 'ADD Quantity :inc',
-        ExpressionAttributeValues = {":inc" : {"N": "1"}},
+        ExpressionAttributeValues = {":inc" : {"N": "5"}},
         ReturnValues = 'UPDATED_NEW'
         )
         
