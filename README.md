@@ -24,7 +24,7 @@ Here cost me 5 bucks! Anyway, I registered a domain from Route53 and under hoste
 I'll be honest here I can say about Java Script I need to study. just for now I copied and pasted a code from the internet.
 
 8. Database :
-Just created a DynamoDB, nothing special.
+ just created a DynamoDB, nothing special.
 
 9. API :
 I think I spent here for a week. First I created an API and Lambda Function to get and update data from the DynamoDB table. used Python. I took a course but I can say I need to spend on it more time, especially on; boto3 and Lambda function side. Created an API with GET Method and before starting the frontend side, I tested the Lambda function via invoking from API Gateway. The next step is deploying the API and adding the link to Html.
@@ -36,15 +36,11 @@ Hello From my first Lambda!
 Tested every minute, I am the king of Unit Tests!
 
 12. Infrastructure as Code :
-I created a YAML file for DynamoDB Table APIGateway and Lambda Function then deployed with diffrent name in same region. Test is successful.
+I created a YAML file for DynamoDB Table APIGateway and Lambda Function then deployed it with different names in the same region. The test is successful.
 
 13. Source Control :
-I already have GitHub, next please!
+I already have GitHub, next, please!
 
-14. CI/CD (Back end)
-
-
-
-15. CI/CD (Front end)
-
+14. CI/CD (Back end), 15. CI/CD (Front end)
+I created a Yaml file for GitHub actions to deploy Backend with sam, also in the same file, I added to update the s3 bucket for Frontend changes. So now when I change frontend or backend, GitHub actions trigger by push and deploying.
 
