@@ -25,7 +25,7 @@ jobs:
           sam build
       - name: SAM Deploy
         run: |
-          sam deploy --stack-name infra --s3-bucket ${{ secrets.AWS_S3_BUCKET }}/artifacts/ --no-confirm-changeset --no-fail-on-empty-changeset
+          sam deploy --stack-name infra --s3-bucket ${{ secrets.AWS_S3_BUCKET }} --no-confirm-changeset --no-fail-on-empty-changeset
           
   upload-website-to-s3:
     runs-on: ubuntu-latest
