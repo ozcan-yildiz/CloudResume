@@ -1,4 +1,6 @@
 # CloudResume
+
+Resume Page :
 https://resume.ozcanyildiz.link
 
 Challenge Accepted!
