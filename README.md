@@ -21,7 +21,7 @@ Challenge Accepted!
    Here cost me 5 bucks! Anyway, I registered a domain from Route53 and under hosted zones records created a subdomain for resume. I added that domain to CloudFront. Also, I created a certificate for the domain to connect only via HTTPS. I added records to route53 for validation. also in CloudFront don't forget to allow connection via HTTPS only.
 
 7. Javascript :
-   I'll be honest here I can say about Java Script I need to study. just for now I copied and pasted a code from the internet.
+  To be fair here I can say about Java Script I need to study. just for now I copied and pasted a code from the internet.
 
 8. Database :
    just created a DynamoDB, nothing special.
@@ -44,9 +44,8 @@ Challenge Accepted!
 14. CI/CD (Back end), 15. CI/CD (Front end)
     I created a Yaml file for GitHub actions to deploy Backend with sam, also in the same file, I added to update the s3 bucket for Frontend changes. So now when I change frontend or backend, GitHub actions trigger by push and deploy
 
-    To Do List:
+![Alt text](cloud_resume_challange.png?raw=true "Title")
 
-    - A better front end design
-    - Work on python and java script
+    To Do List:
     - Set a test stage for CICD
-    - Create all resuorces in IaC
+
